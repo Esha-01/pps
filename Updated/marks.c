@@ -262,12 +262,13 @@ void addStudent()
         printf("Enter Name : ");
 //        gets(std.name);///???
         gets(std.name);
+        // change
         gotoxy(10,8);
         printf("Enter Mobile Number : ");
         gets(std.mobile);
         gotoxy(10,9);
         printf("Enter Roll No : ");
-        scanf("%d",&std.rollno);
+            scanf("%d",&std.rollno);
         fflush(stdin);
         gotoxy(10,10);
         printf("Enter Course : ");
@@ -278,17 +279,20 @@ void addStudent()
         gets(std.branch);
         //============changes============
         printf("Enter Subject1 Name : ");
-        gets(std.subject1);
+            gets(std.subject1);
         printf("Enter Subject2 Name : ");
-        gets(std.subject2);
+            gets(std.subject2);
         printf("Enter Subject3 Name : ");
-        gets(std.subject3);
+            gets(std.subject3);
         printf("Enter subject1 Marks : ");
-        scanf("%d",&std.subject1Marks);
+            scanf("%d",&std.subject1Marks);
         printf("Enter subject2 Marks : ");
-        scanf("%d",&std.subject2Marks);
+            scanf("%d",&std.subject2Marks);
         printf("Enter subject3 Marks : ");
-        scanf("%d",&std.subject3Marks);
+            scanf("%d",&std.subject3Marks);
+
+            fprintf(fp,"%s\t\t%s\t\t%d\t\t%s\t\t%s\t\t%s\t\t%s\t\t%s\t\t%d\t\t%d\t\t%d\t\t\n",std.name,std.mobile,std.rollno,std.course,std.branch,std.subject1,std.subject2,std.subject3,std.subject1Marks,std.subject2Marks,std.subject3Marks);
+            
         std.marks = std.subject1Marks + std.subject2Marks + std.subject3Marks;
         std.percentage = std.marks*100.0/300;
         std.cgpa = std.percentage/9.5;
@@ -298,7 +302,7 @@ void addStudent()
 //        gotoxy(10,12);
 //        printf("Enter Father's Name : ");
 //        gets(std.fathername);
-        fwrite(&std,sizeof(std),1,fp);
+        // fwrite(&std,sizeof(std),1,fp);
         gotoxy(10,15);
         printf("Want to add of another record? Then press 'y' else 'n'.");
         fflush(stdin);
